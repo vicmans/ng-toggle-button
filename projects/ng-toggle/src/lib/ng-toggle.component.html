@@ -1,0 +1,37 @@
+<label class="ng-toggle-switch">
+  <input
+    type="checkbox"
+    class="ng-toggle-switch-input"
+    [name]="name"
+    [checked]="value"
+    [disabled]="disabled"
+    (change)="toggle($event)"
+  >
+  <div
+    class="ng-toggle-switch-core"
+    [ngStyle]="coreStyle"
+  >
+    <div
+      class="ng-toggle-switch-button"
+      [ngStyle]="buttonStyle">
+    </div>
+  </div>
+  <ng-container *ngIf="labels">
+    <span
+      class="ng-toggle-switch-label ng-toggle-left"
+      [ngStyle]="labelStyle"
+      *ngIf="toggled"
+    >
+      {{labelChecked}}
+    </span>
+    <span
+      class="ng-toggle-switch-label ng-toggle-right"
+      [ngStyle]="labelStyle"
+      *ngIf="!toggled"
+    >
+      <ng-container slot="unchecked">
+        {{labelUnchecked}}
+      </ng-container>
+    </span>
+  </ng-container>
+</label>

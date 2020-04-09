@@ -1,0 +1,250 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container" style="text-align:center">
+  <section class="section">
+  <h1 class="title">{{title}}</h1>
+  <h2 class="subtitle">Examples:</h2>
+  <ng-toggle
+    [value]="false"
+  ></ng-toggle>
+  
+  <h2 class="subtitle">
+    ngModel
+  </h2>
+  <ng-toggle
+    [(ngModel)]="prueba"
+    [labels]="{checked: 'Encendido', unchecked: 'Apagado'}"
+    [color]="{checked: '#00a388', unchecked: '#ddd', disabled: '#ddd'}"
+    [width]="82"
+  ></ng-toggle>
+  <p class="is-family-code">ngModel: {{prueba}}</p>
+  
+  <h2 class="subtitle">
+    Disabled
+  </h2>
+  <ng-toggle
+    [value]="false"
+    [disabled]="true"
+    [color]="{checked: '#00FF00', unchecked: 'red', disabled: '#ddd'}"
+    [labels]="{checked: 'si', unchecked: 'no'}"
+  ></ng-toggle>
+
+  <h2 class="subtitle">
+    In a formGroup
+  </h2>
+
+  <form [formGroup]="myForm">
+    <ng-toggle
+      formControlName="show"
+      color="#aa331f"
+      speed="100"
+      [labels]="{checked: 'yes', unchecked: 'no'}"
+    ></ng-toggle>
+    Active
+  </form>
+
+  <h2 class="subtitle">Large</h2>
+  <ng-toggle
+    color="#aa331f"
+    width="100"
+    height="50"
+    fontSize="20"
+    speed="1500"
+    [margin]="2"
+    [labels]="{checked: 'ok', unchecked: 'no'}"
+  ></ng-toggle>
+
+  <h2 class="subtitle">
+    Another style
+  </h2>
+  <ng-toggle
+    [value]="false"
+    width="40"
+    height="10"
+    [margin]="-3"
+    [switchColor]="{checked: '#00a388', unchecked: '#BFCBD9'}"
+  ></ng-toggle>
+  <br>
+  <h2 class="subtitle">
+    Configure
+  </h2>
+  <div class="columns"> 
+    <div class="column is-half">
+      <ng-toggle
+        [(ngModel)]="config.value"
+        [disabled]="config.disabled"
+        [width]="config.width"
+        [height]="config.height"
+        [margin]="config.margin"
+        [labels]="config.labels"
+        [color]="config.color"
+        [switchColor]="config.switchColor"
+        [fontColor]="config.fontColor"
+        [fontSize]="config.fontSize"
+      ></ng-toggle>
+      <br>
+      <pre style="text-align: left; margin-top: 15px;">
+&lt;ng-toggle
+  [value]="{{config.value}}"
+  [disabled]="{{config.disabled}}"
+  [width]="{{config.width}}"
+  [height]="{{config.height}}"
+  [margin]="{{config.margin}}"
+  [fontSize]="{{config.fontSize}}"
+  [labels]="{{config.labels|json}}"
+  [color]="{{config.color|json}}"
+  [switchColor]="{{config.switchColor|json}}"
+  [fontColor]="{{config.fontColor|json}}">
+&lt;/ng-toggle>
+      </pre>
+    </div>
+    <div class="column is-half">
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <label class="label" for="disabled">disabled: </label>
+        </div>
+        <div class="field-body">
+          <div class="control">
+            <input type="checkbox" id="disabled" [(ngModel)]="config.disabled">
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <label class="label" for="disabled">width: </label>
+        </div>
+        <div class="field-body">
+          <div class="control">
+            <input class="input" type="number" id="width" [(ngModel)]="config.width">
+          </div>
+        </div>
+      </div>
+      
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <label class="label" for="disabled">height: </label>
+        </div>
+        <div class="field-body">
+          <div class="control">
+            <input class="input" type="number" id="height" [(ngModel)]="config.height">
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <label class="label" for="disabled">margin: </label>
+        </div>
+        <div class="field-body">
+          <div class="control">
+            <input class="input" type="number" id="margin" [(ngModel)]="config.margin">
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <label class="label">fontSize: </label>
+        </div>
+        <div class="field-body">
+          <div class="control">
+            <input class="input" type="number" [(ngModel)]="config.fontSize">
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <label class="label">checked label: </label>
+        </div>
+        <div class="field-body">
+          <div class="control">
+            <input class="input" type="text" [(ngModel)]="config.labels.checked">
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <label class="label" for="disabled">unchecked label: </label>
+        </div>
+        <div class="field-body">
+          <div class="control">
+            <input class="input" type="text" [(ngModel)]="config.labels.unchecked">
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <label class="label">checked color: </label>
+        </div>
+        <div class="field-body">
+          <div class="control">
+            <input type="color" [(ngModel)]="config.color.checked">
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <label class="label">unchecked color: </label>
+        </div>
+        <div class="field-body">
+          <div class="control">
+            <input type="color" [(ngModel)]="config.color.unchecked">
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <label class="label">checked switchColor: </label>
+        </div>
+        <div class="field-body">
+          <div class="control">
+            <input type="color" [(ngModel)]="config.switchColor.checked">
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <label class="label">unchecked switchColor: </label>
+        </div>
+        <div class="field-body">
+          <div class="control">
+            <input type="color" [(ngModel)]="config.switchColor.unchecked">
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <label class="label">checked fontColor: </label>
+        </div>
+        <div class="field-body">
+          <div class="control">
+            <input type="color" [(ngModel)]="config.fontColor.checked">
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <label class="label">unchecked fontColor: </label>
+        </div>
+        <div class="field-body">
+          <div class="control">
+            <input type="color" [(ngModel)]="config.fontColor.unchecked">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+</div>
+<footer class="footer has-text-centered">
+  &copy; made with ❤️ by me
+</footer>

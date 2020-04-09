@@ -1,0 +1,27 @@
+{
+  "name": "ng-toggle",
+  "version": "0.0.1",
+  "description": "Angular toggle button switch",
+  "author": "vicmans",
+  "license": "MIT",
+  "homepage": "https://github.com/vicmans/ng-toggle-button#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vicmans/ng-toggle-button.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vicmans/ng-toggle-button/issues"
+  },
+  "keywords": [
+    "angular",
+    "button",
+    "ng",
+    "toggle",
+    "switch",
+    "ui"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^8.0.3",
+    "@angular/core": "^8.0.3"
+  }
+}
