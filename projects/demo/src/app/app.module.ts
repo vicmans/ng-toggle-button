@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgToggleModule } from 'ng-toogle';
+import { NgToggleModule } from 'projects/ng-toggle/src/public-api';
 
 @NgModule({
   declarations: [

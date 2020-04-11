@@ -6,6 +6,8 @@ const DEFAULT_COLOR_UNCHECKED = '#e0e0e0'
 const DEFAULT_LABEL_CHECKED = ''
 const DEFAULT_LABEL_UNCHECKED = ''
 const DEFAULT_SWITCH_COLOR = '#fff'
+const DISABLED_COLOR = '#dbdbdb'
+const DISABLED_BUTTON_COLOR = 'silver'
 
 @Component({
   selector: 'ng-toggle',
@@ -26,8 +28,8 @@ export class NgToggleComponent implements OnInit, ControlValueAccessor {
   @Input() disabled: boolean = false
 
   @Input() height: number = 25
-  @Input() width: number = 50
-  @Input() margin: number = 3
+  @Input() width: number = 45
+  @Input() margin: number = 2
   @Input() fontSize: number
   @Input() speed: number = 300
   @Input() color: string | toggleConfig
@@ -97,15 +99,16 @@ export class NgToggleComponent implements OnInit, ControlValueAccessor {
     const transform = this.toggled
       ? translate(this.distance, margin)
       : translate(margin, margin)
-    const background = this.switchColor
+    let background = this.switchColor
       ? this.switchColorCurrent
       : null
+    background = this.disabled ? DISABLED_BUTTON_COLOR : background
     return {
       width: px(this.buttonRadius),
       height: px(this.buttonRadius),
       transition,
       transform,
-      background
+      background,
     }
   }
   get labelStyle () {
@@ -127,7 +130,7 @@ export class NgToggleComponent implements OnInit, ControlValueAccessor {
     return get(this.color, 'unchecked', DEFAULT_COLOR_UNCHECKED)
   }
   get colorDisabled () {
-    return get(this.color, 'disabled', this.colorCurrent)
+    return get(this.color, 'disabled', DISABLED_COLOR)
   }
   get colorCurrent () {
     return this.toggled

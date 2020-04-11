@@ -2,7 +2,7 @@
   "name": "ng-toggle-button",
   "description": "A toggle button component",
   "author": "vicmans",
-  "version": "0.0.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/vicmans/ng-toggle-button#readme",
   "repository": {
     "type": "git",
@@ -41,7 +41,7 @@
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.901.1",
+    "@angular-devkit/build-angular": "^0.803.24",
     "@angular-devkit/build-ng-packagr": "^0.801.3",
     "@angular/cli": "~8.0.2",
     "@angular/compiler-cli": "~8.0.0",

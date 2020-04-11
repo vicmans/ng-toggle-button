@@ -104,7 +104,9 @@
         </div>
         <div class="field-body">
           <div class="control">
-            <input type="checkbox" id="disabled" [(ngModel)]="config.disabled">
+            <ng-toggle
+              [(ngModel)]="config.disabled"
+            ></ng-toggle>
           </div>
         </div>
       </div>
