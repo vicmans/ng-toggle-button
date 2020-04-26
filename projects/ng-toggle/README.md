@@ -1,6 +1,7 @@
+
 # AngularToggleButton
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.2.
+This is a toggle switch button component, you can see the demo [here](https://vicmans.com/demos/ng-toggle-button) and test it in [StackBlitz](https://stackblitz.com/edit/ng-toggle-button).
 
 ## Instalation
 
@@ -56,7 +57,7 @@ Use
 | margin | `number` | `3` | Space between the switch and background border |
 | name | `string` | `undefined` | Name to attach to the generated input field |
 | fontSize | `number` | `10` | Font size in pixels |
-| fontCize | `string  Object` | `10` | If `string` - color when checked <br>If `Object` - colors for labels when checked/uncheked <br>Example: `{checked: '#25EF02', unchecked: '#35DB15'}` |
+| fontColor | `string  Object` | `undefined` | If `string` - color when checked <br>If `Object` - colors for labels when checked/uncheked <br>Example: `{checked: '#25EF02', unchecked: '#35DB15'}` by default the text color is white.|
 
 ### Outputs events
 

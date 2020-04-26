@@ -1,10 +1,21 @@
-<!--The content below is only a placeholder and can be replaced.-->
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://vicmans.com">
+      <img src="https://vicmans.com/v.png" width="28" height="28"> Victor
+    </a>
+  </div>
+  <a class="button is-light" href="https://github.com/vicmans/ng-toggle-button">
+    <strong>GitHub</strong>
+  </a>
+
+</nav>
+
 <div class="container" style="text-align:center">
   <section class="section">
   <h1 class="title">{{title}}</h1>
   <h2 class="subtitle">Examples:</h2>
   <ng-toggle
-    [value]="false"
+    [value]="true"
   ></ng-toggle>
   
   <h2 class="subtitle">
@@ -36,6 +47,7 @@
     <ng-toggle
       formControlName="show"
       color="#aa331f"
+      width="55"
       speed="100"
       [labels]="{checked: 'yes', unchecked: 'no'}"
     ></ng-toggle>

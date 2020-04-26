@@ -2,7 +2,7 @@
   "name": "ng-toggle-button",
   "description": "A toggle button component",
   "author": "vicmans",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "homepage": "https://github.com/vicmans/ng-toggle-button#readme",
   "repository": {
     "type": "git",
@@ -11,16 +11,20 @@
   "bugs": {
     "url": "https://github.com/vicmans/ng-toggle-button/issues"
   },
+  "license": "MIT",
   "keywords": [
     "angular",
+    "button",
+    "ng",
     "toggle",
     "switch",
-    "button"
+    "ui"
   ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:lib": "ng build ng-toggle",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -41,7 +45,7 @@
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.803.24",
+    "@angular-devkit/build-angular": "^0.801.3",
     "@angular-devkit/build-ng-packagr": "^0.801.3",
     "@angular/cli": "~8.0.2",
     "@angular/compiler-cli": "~8.0.0",
