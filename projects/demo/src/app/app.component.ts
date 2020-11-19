@@ -38,4 +38,8 @@ export class AppComponent {
       'show': new FormControl()
     })
   }
+
+  changeEvent() {
+    console.log(this.config.value);
+  }
 }

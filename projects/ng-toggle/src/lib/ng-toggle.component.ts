@@ -180,7 +180,6 @@ export class NgToggleComponent implements OnInit, ControlValueAccessor {
     this.value = toggled;
     this.onTouch();
     this.onChange(toggled);
-    this.change.emit(toggled)
   }
 }
 
