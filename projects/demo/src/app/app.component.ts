@@ -8,7 +8,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class AppComponent {
   title = 'ng-toggle-button';
-  prueba = true
+  prueba = false
 
   config = {
     value: true,

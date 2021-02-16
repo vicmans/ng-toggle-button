@@ -38,7 +38,7 @@ export class NgToggleComponent implements OnInit, ControlValueAccessor {
   @Input() checkedLabel: string = ''
   @Input() uncheckedLabel: string = ''
   @Input() fontColor: string | toggleConfig
-   
+  @Input('ngModel') model: boolean
   cssColors: boolean = false
   
   @Output() change = new EventEmitter()
@@ -47,7 +47,7 @@ export class NgToggleComponent implements OnInit, ControlValueAccessor {
   constructor() { }
 
   ngOnInit() {
-    this.toggled = this.value
+    this.toggled = this.model !== undefined ? this.model : this.value
   }
 
   onChange = (_:any) => { }
