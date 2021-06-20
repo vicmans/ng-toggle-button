@@ -8,10 +8,11 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class AppComponent {
   title = 'ng-toggle-button';
-  prueba = false
+  prueba = true
+  custom = 'si'
 
   config = {
-    value: true,
+    value: 1,
     name: '',
     disabled: false,
     height: 25,
@@ -27,6 +28,10 @@ export class AppComponent {
     labels: {
       unchecked: 'off',
       checked: 'on',
+    },
+    values: {
+      unchecked: 0,
+      checked: 1,
     },
     checkedLabel: '',
     uncheckedLabel: '',

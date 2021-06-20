@@ -1,7 +1,7 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="https://vicmans.com">
-      <img src="https://vicmans.com/v.png" width="28" height="28"> Victor
+    <a class="navbar-item" href="http://vicmans.com">
+      <img src="http://vicmans.com/v.png" width="28" height="28"> Victor
     </a>
   </div>
   <a class="button is-light" href="https://github.com/vicmans/ng-toggle-button">
@@ -19,7 +19,7 @@
   ></ng-toggle>
   
   <h2 class="subtitle">
-    ngModel
+    Custom
   </h2>
   <ng-toggle
     [(ngModel)]="prueba"
@@ -77,6 +77,16 @@
   ></ng-toggle>
   <br>
   <h2 class="subtitle">
+    Custom values
+  </h2>
+  <ng-toggle
+    [(ngModel)]="custom"
+    [labels]="{checked: 'yes', unchecked: 'no'}"
+    [values]="{checked: 'si', unchecked: 'no'}"
+    [width]="55"
+  ></ng-toggle>
+  <p class="is-family-code">ngModel: {{custom}}</p>
+  <h2 class="subtitle">
     Configure
   </h2>
   <div class="columns"> 
@@ -92,6 +102,7 @@
         [switchColor]="config.switchColor"
         [fontColor]="config.fontColor"
         [fontSize]="config.fontSize"
+        [values]="config.values"
         (change)="changeEvent()"
       ></ng-toggle>
       <br>
@@ -106,6 +117,7 @@
   [labels]="{{config.labels|json}}"
   [color]="{{config.color|json}}"
   [switchColor]="{{config.switchColor|json}}"
+  [values]="{{config.values|json}}"
   [fontColor]="{{config.fontColor|json}}">
 &lt;/ng-toggle>
       </pre>
@@ -189,6 +201,29 @@
           </div>
         </div>
       </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <label class="label">checked value: </label>
+        </div>
+        <div class="field-body">
+          <div class="control">
+            <input class="input" type="text" [(ngModel)]="config.values.checked">
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <label class="label">unchecked value: </label>
+        </div>
+        <div class="field-body">
+          <div class="control">
+            <input class="input" type="text" [(ngModel)]="config.values.unchecked">
+          </div>
+        </div>
+      </div>
+
 
       <div class="field is-horizontal">
         <div class="field-label">

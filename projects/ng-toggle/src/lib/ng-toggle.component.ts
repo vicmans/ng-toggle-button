@@ -38,6 +38,7 @@ export class NgToggleComponent implements OnInit, ControlValueAccessor {
   @Input() checkedLabel: string = ''
   @Input() uncheckedLabel: string = ''
   @Input() fontColor: string | toggleConfig
+  @Input() values: valueConfig = {checked: true, unchecked: false}
   @Input('ngModel') model: boolean
   cssColors: boolean = false
   
@@ -47,7 +48,7 @@ export class NgToggleComponent implements OnInit, ControlValueAccessor {
   constructor() { }
 
   ngOnInit() {
-    this.toggled = this.model !== undefined ? this.model : this.value
+    this.setToogle()
   }
 
   onChange = (_:any) => { }
@@ -61,9 +62,9 @@ export class NgToggleComponent implements OnInit, ControlValueAccessor {
 
   writeValue(value: any): void {
     if (value) {
-      this.value = value || false;
+      this.value = value == true ? this.values.checked : this.values.unchecked;
     } else {
-      this.value = false;
+      this.value = this.values.unchecked;
     }
   }
   registerOnChange(fn: any): void {
@@ -74,6 +75,13 @@ export class NgToggleComponent implements OnInit, ControlValueAccessor {
   }
   setDisabledState(isDisabled: boolean): void {
     this.disabled = isDisabled;
+  }
+
+  setToogle() {
+    const value = this.model !== undefined ? this.model : this.value
+    let index = Object.values(this.values).findIndex(el => el == value)
+    if(index > -1)
+      this.toggled = Object.keys(this.values)[index] == 'checked' ? true : false
   }
 
   get coreStyle () {
@@ -177,10 +185,15 @@ export class NgToggleComponent implements OnInit, ControlValueAccessor {
     const toggled = !this.toggled;
     this.toggled = toggled;
 
-    this.value = toggled;
+    this.value = this.getValue(toggled)
     this.onTouch();
-    this.onChange(toggled);
+    this.onChange(this.value);
   }
+
+  getValue(key: boolean) {
+    return key === true ? this.values['checked'] : this.values['unchecked']
+  }
+  
 }
 
 export const isObject = (value) => {
@@ -206,4 +219,9 @@ export const translate = (x, y) => {
 export type toggleConfig = {
   checked: string,
   unchecked: string
+}
+
+export type valueConfig = {
+  checked: any,
+  unchecked: any
 }
