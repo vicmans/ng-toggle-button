@@ -21,7 +21,7 @@
     "ui"
   ],
   "peerDependencies": {
-    "@angular/common": "^8.0.3",
-    "@angular/core": "^8.0.3"
+    "@angular/common": ">=8.0.0",
+    "@angular/core": ">=8.0.0"
   }
 }
