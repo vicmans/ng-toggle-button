@@ -3,6 +3,13 @@
 
 This is a toggle switch button component, you can see the demo [here](http://vicmans.com/demos/ng-toggle-button) and test it in [StackBlitz](https://stackblitz.com/edit/ng-toggle-button).
 
+## Versions
+
+| Angular | ng-toggle-button|
+| --------|:------:| 
+| >=9.0.0 | v0.2.x |
+| v8.x.x  | v0.1.x |
+
 ## Instalation
 
 ```
