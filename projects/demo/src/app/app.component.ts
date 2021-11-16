@@ -40,7 +40,7 @@ export class AppComponent {
   myForm: FormGroup;
   constructor() {
     this.myForm = new FormGroup({
-      'show': new FormControl()
+      'show': new FormControl(false)
     })
   }
 

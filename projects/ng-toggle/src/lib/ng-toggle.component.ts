@@ -61,11 +61,8 @@ export class NgToggleComponent implements OnInit, ControlValueAccessor {
   }
 
   writeValue(value: any): void {
-    if (value) {
-      this.value = value == true ? this.values.checked : this.values.unchecked;
-    } else {
-      this.value = this.values.unchecked;
-    }
+    this.value = value;
+    this.setToogle();
   }
   registerOnChange(fn: any): void {
     this.onChange = fn;
@@ -96,7 +93,8 @@ export class NgToggleComponent implements OnInit, ControlValueAccessor {
     }
   }
   get buttonRadius () {
-    return this.height - this.margin * 2;
+    const radius = this.height - this.margin * 2;
+    return radius > 0 ? radius : 0;
   }
   get distance () {
     return px(this.width - this.height + this.margin)

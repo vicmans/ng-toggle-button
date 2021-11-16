@@ -1,9 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [Unreleased]
+## [0.2.1] - 2021-11-15
 ### Added
-- Changelog
+- Fixed issue setting default value when using Reactive Forms
+- Fixed issue with margin in toggle
+- Addes Changelog
 
 ## [0.2.0] - 2021-07-25
 ### Added
