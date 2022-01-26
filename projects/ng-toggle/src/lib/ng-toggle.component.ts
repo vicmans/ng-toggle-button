@@ -39,7 +39,6 @@ export class NgToggleComponent implements OnInit, ControlValueAccessor {
   @Input() uncheckedLabel: string = ''
   @Input() fontColor: string | toggleConfig
   @Input() values: valueConfig = {checked: true, unchecked: false}
-  @Input('ngModel') model: boolean
   cssColors: boolean = false
   
   @Output() change = new EventEmitter()
@@ -75,7 +74,7 @@ export class NgToggleComponent implements OnInit, ControlValueAccessor {
   }
 
   setToogle() {
-    const value = this.model !== undefined ? this.model : this.value
+    const value = this.value
     let index = Object.values(this.values).findIndex(el => el == value)
     if(index > -1)
       this.toggled = Object.keys(this.values)[index] == 'checked' ? true : false

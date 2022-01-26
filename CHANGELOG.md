@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.2.2] - 2022-01-25
+### Bug Fixed
+- Fixed issue with ngModel input property
+
 ## [0.2.1] - 2021-11-15
 ### Added
 - Fixed issue setting default value when using Reactive Forms
