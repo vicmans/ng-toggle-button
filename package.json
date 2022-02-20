@@ -2,7 +2,7 @@
   "name": "ng-toggle-button",
   "description": "A toggle button component",
   "author": "vicmans",
-  "version": "0.2.3-beta.0",
+  "version": "0.2.3",
   "homepage": "https://github.com/vicmans/ng-toggle-button#readme",
   "repository": {
     "type": "git",

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, forwardRef, Output, EventEmitter } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { NgToggleConfig, toggleConfig, valueConfig } from './ng-toggle.config';
+import { NgToggleConfig } from './ng-toggle.config';
 
 const DEFAULT_COLOR_CHECKED = '#0099CC'
 const DEFAULT_COLOR_UNCHECKED = '#e0e0e0'
@@ -213,3 +213,13 @@ export const px = value => {
 export const translate = (x, y) => {
   return `translate(${x}, ${y})`
 }
+
+export type toggleConfig = {
+  checked: string;
+  unchecked: string;
+};
+
+export type valueConfig = {
+  checked: any;
+  unchecked: any;
+};

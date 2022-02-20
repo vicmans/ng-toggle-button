@@ -32,7 +32,7 @@ import { NgToggleModule } from 'ng-toggle-button';
   ...
   imports: [
     ...,
-    NgToggleModule.forRoot() // NgToggleModule
+    NgToggleModule.forRoot() //or NgToggleModule
   ],
 })
 ```

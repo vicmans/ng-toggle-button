@@ -1,12 +1,4 @@
-export type toggleConfig = {
-  checked: string;
-  unchecked: string;
-};
-
-export type valueConfig = {
-  checked: any;
-  unchecked: any;
-};
+import { toggleConfig, valueConfig } from "./ng-toggle.component";
 
 export class NgToggleConfig {
   value?: any;
