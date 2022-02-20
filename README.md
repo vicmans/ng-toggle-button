@@ -32,10 +32,25 @@ import { NgToggleModule } from 'ng-toggle-button';
   ...
   imports: [
     ...,
-    NgToggleModule
+    NgToggleModule.forRoot() // NgToggleModule
   ],
 })
 ```
+
+Also, you can pass a global configuration for all `ng-toggle` component in your app
+
+```typescript
+import { NgToggleModule } from 'ng-toggle-button';
+@NgModule({
+  ...
+  imports: [
+    ...,
+    NgToggleModule.forRoot(config)
+  ],
+})
+```
+
+The `config` object is described in the table bellow
 
 Use
 

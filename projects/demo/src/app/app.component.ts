@@ -33,8 +33,6 @@ export class AppComponent {
       unchecked: 0,
       checked: 1,
     },
-    checkedLabel: '',
-    uncheckedLabel: '',
     fontColor: {checked: '#fafafa', unchecked: '#f45a32'}
   }
   myForm: FormGroup;

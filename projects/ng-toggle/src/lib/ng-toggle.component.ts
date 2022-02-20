@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, forwardRef, Output, EventEmitter } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { NgToggleConfig, toggleConfig, valueConfig } from './ng-toggle.config';
 
 const DEFAULT_COLOR_CHECKED = '#0099CC'
 const DEFAULT_COLOR_UNCHECKED = '#e0e0e0'
@@ -23,28 +24,28 @@ const DISABLED_BUTTON_COLOR = 'silver'
 })
 export class NgToggleComponent implements OnInit, ControlValueAccessor {
 
-  @Input() value: boolean = true
-  @Input() name: string = ''
-  @Input() disabled: boolean = false
+  @Input() value: any = this.config.value || true
+  @Input() name: string = this.config.name || ''
+  @Input() disabled: boolean = this.config.disabled || false
 
-  @Input() height: number = 25
-  @Input() width: number = 45
-  @Input() margin: number = 2
-  @Input() fontSize: number
-  @Input() speed: number = 300
-  @Input() color: string | toggleConfig
-  @Input() switchColor: string | toggleConfig
-  @Input() labels: boolean | toggleConfig = true
-  @Input() checkedLabel: string = ''
-  @Input() uncheckedLabel: string = ''
-  @Input() fontColor: string | toggleConfig
-  @Input() values: valueConfig = {checked: true, unchecked: false}
+  @Input() height: number = this.config.height || 25
+  @Input() width: number = this.config.width || 45
+  @Input() margin: number = this.config.margin || 2
+  @Input() fontSize: number = this.config.fontSize || undefined
+  @Input() speed: number = this.config.speed || 300
+  @Input() color: string | toggleConfig = this.config.color
+  @Input() switchColor: string | toggleConfig = this.config.switchColor
+  @Input() labels: boolean | toggleConfig = this.config.labels || true
+  @Input() fontColor: string | toggleConfig = this.config.fontColor || undefined
+  @Input() values: valueConfig = this.config.values || {checked: true, unchecked: false}
   cssColors: boolean = false
   
   @Output() change = new EventEmitter()
   toggled: boolean
 
-  constructor() { }
+  constructor(
+    private config: NgToggleConfig
+  ) { }
 
   ngOnInit() {
     this.setToogle()
@@ -211,14 +212,4 @@ export const px = value => {
 
 export const translate = (x, y) => {
   return `translate(${x}, ${y})`
-}
-
-export type toggleConfig = {
-  checked: string,
-  unchecked: string
-}
-
-export type valueConfig = {
-  checked: any,
-  unchecked: any
 }
