@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.2.3] - 2022-02-19
+### Added
+- Add forRoot default configuration for component
+
 ## [0.2.2] - 2022-01-25
 ### Bug Fixed
 - Fixed issue with ngModel input property

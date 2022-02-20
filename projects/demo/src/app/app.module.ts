@@ -11,7 +11,15 @@ import { NgToggleModule } from 'projects/ng-toggle/src/public-api';
   ],
   imports: [
     BrowserModule,
-    NgToggleModule,
+    NgToggleModule.forRoot({
+      color: '#6610f2',
+      width: 50,
+      value: 1,
+      values: {
+        checked: 1,
+        unchecked: 0
+      }
+    }),
     FormsModule,
     ReactiveFormsModule
   ],
