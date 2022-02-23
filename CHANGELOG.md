@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.0.0] - 2022-02-23
+### Added
+- Update to Angular 10
+- Added unit test to lib component
+
 ## [0.2.3] - 2022-02-19
 ### Added
 - Add forRoot default configuration for component
