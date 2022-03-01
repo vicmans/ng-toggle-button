@@ -7,6 +7,7 @@ This is a toggle switch button component, you can see the demo [here](http://vic
 
 | Angular | ng-toggle-button|
 | -------- |:------:| 
+| >=11.0.0 | v1.1.x |
 | >=10.0.0 | v1.0.x |
 | >=9.0.0  | v0.2.x |
 | v8.x.x   | v0.1.x |
