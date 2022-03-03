@@ -1,6 +1,6 @@
 {
   "name": "ng-toggle-button",
-  "version": "1.1.0-beta.0",
+  "version": "1.1.0",
   "description": "Angular toggle button switch",
   "author": "vicmans",
   "license": "MIT",

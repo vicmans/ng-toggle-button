@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] - 2022-03-02
+### Changes
+- Update to Angular 11
+- Change README.md
+
 ## [1.0.0] - 2022-02-23
 ### Added
 - Update to Angular 10

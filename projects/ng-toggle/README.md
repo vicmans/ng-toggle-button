@@ -1,7 +1,7 @@
 
 # AngularToggleButton
 
-This is a toggle switch button component, you can see the demo [here](http://vicmans.com/demos/ng-toggle-button) and test it in [StackBlitz](https://stackblitz.com/edit/ng-toggle-button).
+This is a toggle switch button component, you can see the demo [here](https://ng-toggle-button.netlify.app) and test it in [StackBlitz](https://stackblitz.com/edit/ng-toggle-button).
 
 ## Versions
 
