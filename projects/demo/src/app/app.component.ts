@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { NgToggleConfig } from 'projects/ng-toggle/src/public-api';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +11,9 @@ export class AppComponent {
   title = 'ng-toggle-button';
   prueba = true
   custom = 'si'
+  twoWay = 1
 
-  config = {
+  config: NgToggleConfig = {
     value: 1,
     name: '',
     disabled: false,

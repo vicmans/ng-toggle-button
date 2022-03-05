@@ -1,7 +1,7 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="http://vicmans.com">
-      <img src="http://vicmans.com/v.png" width="28" height="28"> Victor
+      <img src="assets/v.png" width="28" height="28"> Victor
     </a>
   </div>
   <a class="button is-light" href="https://github.com/vicmans/ng-toggle-button">
@@ -86,6 +86,13 @@
   ></ng-toggle>
   <p class="is-family-code">ngModel: {{custom}}</p>
   <h2 class="subtitle">
+    Two-way binding value
+  </h2>
+  <ng-toggle
+    [(value)]="twoWay"
+  ></ng-toggle>
+  <p class="is-family-code">value: {{twoWay}}</p>
+  <h2 class="subtitle">
     Configure
   </h2>
   <div class="columns"> 
@@ -130,6 +137,7 @@
           <div class="control">
             <ng-toggle
               [(ngModel)]="config.disabled"
+              [values]="{checked: true, unchecked: false}"
             ></ng-toggle>
           </div>
         </div>

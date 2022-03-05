@@ -41,6 +41,7 @@ export class NgToggleComponent implements OnInit, ControlValueAccessor {
   cssColors: boolean = false
   
   @Output() change = new EventEmitter()
+  @Output() valueChange = new EventEmitter()
   toggled: boolean
 
   constructor(
@@ -186,6 +187,7 @@ export class NgToggleComponent implements OnInit, ControlValueAccessor {
     this.value = this.getValue(toggled)
     this.onTouch();
     this.onChange(this.value);
+    this.valueChange.emit(this.value)
   }
 
   getValue(key: boolean) {

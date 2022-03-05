@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.2.0] - 2022-03-05
+### Added
+- Update to Angular 12
+- Add two-way binding to `value`
+
 ## [1.1.0] - 2022-03-02
 ### Changes
 - Update to Angular 11
