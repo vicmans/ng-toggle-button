@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.3.0] - 2022-03-06
+### Change
+- Update to Angular 13
+
 ## [1.2.0] - 2022-03-05
 ### Added
 - Update to Angular 12
