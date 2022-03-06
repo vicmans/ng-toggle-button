@@ -5,7 +5,7 @@ This is a toggle switch button component, you can see the demo [here](https://ng
 
 ## Versions
 
-| Angular | ng-toggle-button|
+| Angular  | ng-toggle-button|
 | -------- |:------:| 
 | >=13.0.0 | v1.3.x |
 | >=12.0.0 | v1.2.x |
