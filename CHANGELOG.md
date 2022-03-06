@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 ## [1.2.0] - 2022-03-05
 ### Added
 - Update to Angular 12
-- Add two-way binding to `value`
+- Add two-way binding to `value` ([#19](https://github.com/vicmans/ng-toggle-button/issues/19))
 
 ## [1.1.0] - 2022-03-02
 ### Changes
