@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.3.1] - 2022-05-22
+### Bug Fixed
+- Fix issue updating `value` input property programmatically ([#34](https://github.com/vicmans/ng-toggle-button/issues/34))
+
 ## [1.3.0] - 2022-03-06
 ### Change
 - Update to Angular 13

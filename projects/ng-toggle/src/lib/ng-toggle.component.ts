@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, forwardRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, forwardRef, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { NgToggleConfig } from './ng-toggle.config';
 
@@ -22,7 +22,7 @@ const DISABLED_BUTTON_COLOR = 'silver'
     }
   ]
 })
-export class NgToggleComponent implements OnInit, ControlValueAccessor {
+export class NgToggleComponent implements OnInit, ControlValueAccessor, OnChanges {
 
   @Input() value: any = this.config.value || true
   @Input() name: string = this.config.name || ''
@@ -57,6 +57,7 @@ export class NgToggleComponent implements OnInit, ControlValueAccessor {
 
   onInput(value: boolean) {
     this.value = value;
+    console.log(this.value, value, 'calue')
     this.onTouch();
     this.onChange(this.value);
   }
@@ -80,6 +81,14 @@ export class NgToggleComponent implements OnInit, ControlValueAccessor {
     let index = Object.values(this.values).findIndex(el => el == value)
     if(index > -1)
       this.toggled = Object.keys(this.values)[index] == 'checked' ? true : false
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    for (const propName in changes) {
+      const chng = changes[propName];
+      if(propName == 'value')
+        this.writeValue(chng.currentValue)
+    }
   }
 
   get coreStyle () {

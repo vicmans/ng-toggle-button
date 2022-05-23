@@ -1,3 +1,4 @@
+import { SimpleChange } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NgToggleComponent } from './ng-toggle.component';
@@ -38,8 +39,19 @@ describe('NgToggleComponent', () => {
     let label = fixture.debugElement.nativeElement.querySelector('label');
     label.click();
     fixture.detectChanges();
-
     expect(component.value).toBeFalsy();
+  })
+
+  it('should change the value programmatically via value input', () => {
+    component.value = false;
+    component.ngOnChanges({
+      value: new SimpleChange(true, false, true)
+    });
+    fixture.detectChanges();
+    let label = fixture.nativeElement.querySelector('.ng-toggle-switch-label');
+    expect(component.value).toBe(false);
+    expect(component.toggled).toBeFalsy();
+    expect(label.getAttribute('class')).toContain('ng-toggle-right');
   })
 });
 
