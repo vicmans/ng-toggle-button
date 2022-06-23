@@ -228,6 +228,7 @@ export const translate = (x, y) => {
 export type toggleConfig = {
   checked: string;
   unchecked: string;
+  disabled?: string;
 };
 
 export type valueConfig = {
