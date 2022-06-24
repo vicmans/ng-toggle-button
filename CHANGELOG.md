@@ -1,9 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [1.3.1] - 2022-05-22
-### Bug Fixed
+## [1.3.1]
+### Bug Fixed - 2022-05-22
 - Fix issue updating `value` input property programmatically ([#34](https://github.com/vicmans/ng-toggle-button/issues/34))
+### Change - 2022-06-22
+- Add `disabled` property to the `toggleConfig` type ([#33](https://github.com/vicmans/ng-toggle-button/pull/33))
 
 ## [1.3.0] - 2022-03-06
 ### Change
