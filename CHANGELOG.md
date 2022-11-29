@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.3.2]
+### Added - 2022-11-25
+- Add form control states when focus and unfocus with the Tab key, add styles when focus with keyboard (#35)
+
 ## [1.3.1]
 ### Bug Fixed - 2022-05-22
 - Fix issue updating `value` input property programmatically ([#34](https://github.com/vicmans/ng-toggle-button/issues/34))
