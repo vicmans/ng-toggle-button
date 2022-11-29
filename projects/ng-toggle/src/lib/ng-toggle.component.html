@@ -6,9 +6,12 @@
     [checked]="value"
     [disabled]="disabled"
     (change)="toggle($event)"
+    (focusin)="onFocus($event)"
+    (focusout)="onFocusout($event)"
   >
   <div
     class="ng-toggle-switch-core"
+    [ngClass]="{'ng-toggle-focused': focused}"
     [ngStyle]="coreStyle"
   >
     <div

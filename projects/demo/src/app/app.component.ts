@@ -44,6 +44,10 @@ export class AppComponent {
     })
   }
 
+  get showControl() {
+    return this.myForm.get('show');
+  }
+
   changeEvent() {
     console.log(this.config.value);
   }

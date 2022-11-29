@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, forwardRef, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, forwardRef, Output, EventEmitter, OnChanges, SimpleChanges, ElementRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { NgToggleConfig } from './ng-toggle.config';
 
@@ -43,9 +43,11 @@ export class NgToggleComponent implements OnInit, ControlValueAccessor, OnChange
   @Output() change = new EventEmitter()
   @Output() valueChange = new EventEmitter()
   toggled: boolean
+  focused: boolean;
 
   constructor(
-    private config: NgToggleConfig
+    private config: NgToggleConfig,
+    private _elementRef: ElementRef<HTMLElement>,
   ) { }
 
   ngOnInit() {
@@ -202,7 +204,19 @@ export class NgToggleComponent implements OnInit, ControlValueAccessor, OnChange
   getValue(key: boolean) {
     return key === true ? this.values['checked'] : this.values['unchecked']
   }
+
+  onFocus(event: FocusEvent) {
+    if (!this.focused && event.relatedTarget) {
+      this.focused = true;
+    }
+  }
   
+  onFocusout(event: FocusEvent) {
+    if (!this._elementRef.nativeElement.contains(event.relatedTarget as Element)) {
+      this.focused = false;
+      this.onTouch();
+    }
+  }
 }
 
 export const isObject = (value) => {
