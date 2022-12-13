@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.4.0] - 2022-12-12
+### Change
+- Update to Angular 14
+
 ## [1.3.2]
 ### Added - 2022-11-25
 - Add form control states when focus and unfocus with the Tab key, add styles when focus with keyboard (#35)

@@ -131,6 +131,6 @@
           }
         }
       }
-    }},
-  "defaultProject": "ng-toggle"
+    }
+  }
 }
