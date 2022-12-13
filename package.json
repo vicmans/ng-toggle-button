@@ -23,7 +23,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "npm run build:lib",
     "build:lib": "ng build ng-toggle",
     "build:demo": "ng build demo",
     "test": "ng test",
