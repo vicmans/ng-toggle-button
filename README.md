@@ -95,7 +95,7 @@ Use
 
 ### Keyboard Accessibility (WCAG)
 
-The toggle is tabbable, and can be triggered using the spacebar - WCAG 2.4.3(A) 
+The toggle is tabbable, and can be triggered using the spacebar - WCAG 2.4.3(A)
 
 ## Development server
 

@@ -93,6 +93,10 @@ Use
 | ---    | ------  | -------     |
 | change | value   | Triggered when state of the component changes. <br>Contains: <br>`value` - state of the button |
 
+### Keyboard Accessibility (WCAG)
+
+The toggle is tabbable, and can be triggered using the spacebar - WCAG 2.4.3(A)
+
 ## Development server
 
 Clone this repo and download the dependencies.

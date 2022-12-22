@@ -1,9 +1,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.5.0] - 2022-12-22
+### Change
+- Update to Angular 15
+
 ## [1.4.0] - 2022-12-12
 ### Change
 - Update to Angular 14
+- Add keyboard accessibility information to Readme (#45)
 
 ## [1.3.2]
 ### Added - 2022-11-25
