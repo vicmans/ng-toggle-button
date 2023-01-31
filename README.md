@@ -1,12 +1,18 @@
 
 # AngularToggleButton
 
+[![npm version](https://img.shields.io/npm/v/ng-toggle-button.svg)][npm-url]
+[![npm dlm](https://img.shields.io/npm/dm/ng-toggle-button)][npm-url]
+
+[npm-url]: https://www.npmjs.com/package/ng-toggle-button
+
 This is a toggle switch button component, you can see the demo [here](https://ng-toggle-button.netlify.app) and test it in [StackBlitz](https://stackblitz.com/edit/ng-toggle-button).
 
 ## Versions
 
 | Angular  | ng-toggle-button|
 | -------- |:------:| 
+| >=15.0.0 | v1.5.x |
 | >=14.0.0 | v1.4.x |
 | >=13.0.0 | v1.3.x |
 | >=12.0.0 | v1.2.x |
