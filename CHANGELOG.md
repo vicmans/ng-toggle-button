@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.5.1] - 2023-04-28
+### Change
+- Add accessibility attributes following Success Criteria (#49)
+
 ## [1.5.0] - 2022-12-22
 ### Change
 - Update to Angular 15
