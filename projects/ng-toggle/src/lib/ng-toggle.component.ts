@@ -9,6 +9,7 @@ const DEFAULT_LABEL_UNCHECKED = ''
 const DEFAULT_SWITCH_COLOR = '#fff'
 const DISABLED_COLOR = '#dbdbdb'
 const DISABLED_BUTTON_COLOR = 'silver'
+let nextUniqueId = 0;
 
 @Component({
   selector: 'ng-toggle',
@@ -38,17 +39,26 @@ export class NgToggleComponent implements OnInit, ControlValueAccessor, OnChange
   @Input() labels: boolean | toggleConfig = this.config.labels || true
   @Input() fontColor: string | toggleConfig = this.config.fontColor || undefined
   @Input() values: valueConfig = this.config.values || {checked: true, unchecked: false}
+  @Input() id: string = ''
+  @Input('aria-label') ariaLabel: string | null = null;
+  @Input('aria-labelledby') ariaLabelledby: string | null = null;
+  @Input('aria-describedby') ariaDescribedby: string;
   cssColors: boolean = false
   
   @Output() change = new EventEmitter()
   @Output() valueChange = new EventEmitter()
   toggled: boolean
   focused: boolean;
+  private _uniqueId: string;
 
   constructor(
     private config: NgToggleConfig,
     private _elementRef: ElementRef<HTMLElement>,
-  ) { }
+  ) {
+    this._uniqueId = 'ng-toggle-'+(++nextUniqueId);
+    this.id = this.id || this._uniqueId
+    this.ariaLabel = this.ariaLabel || this.name || this.id
+  }
 
   ngOnInit() {
     this.setToogle()
@@ -189,6 +199,13 @@ export class NgToggleComponent implements OnInit, ControlValueAccessor, OnChange
     return this.toggled
       ? this.fontColorChecked
       : this.fontColorUnchecked
+  }
+
+  get label() {
+    if (this.ariaLabelledby) {
+      return this.ariaLabelledby;
+    }
+    return this.ariaLabel ? null : `${this._uniqueId}-label`;
   }
 
   toggle(event) {

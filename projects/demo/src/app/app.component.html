@@ -1,7 +1,7 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="http://vicmans.com">
-      <img src="assets/v.png" width="28" height="28"> Victor
+      <img src="assets/v.png" width="28" height="28" alt="logo"> Victor
     </a>
   </div>
   <a class="button is-light" href="https://github.com/vicmans/ng-toggle-button">
@@ -23,7 +23,7 @@
   <ng-toggle
     [(ngModel)]="prueba"
     [labels]="{checked: 'Encendido', unchecked: 'Apagado'}"
-    [color]="{checked: '#00a388', unchecked: '#ddd', disabled: '#ddd'}"
+    [color]="{checked: '#007a66', unchecked: '#ddd', disabled: '#bfbfbf'}"
     [width]="82"
   ></ng-toggle>
   <p class="is-family-code">ngModel: {{prueba}}</p>
@@ -145,6 +145,7 @@
             <ng-toggle
               [(ngModel)]="config.disabled"
               [values]="{checked: true, unchecked: false}"
+              aria-label="disabled"
             ></ng-toggle>
           </div>
         </div>
@@ -178,7 +179,7 @@
         </div>
         <div class="field-body">
           <div class="control">
-            <input class="input" type="number" id="width" [(ngModel)]="config.width">
+            <input class="input" type="number" id="width" [(ngModel)]="config.width" aria-label="width">
           </div>
         </div>
       </div>
@@ -189,7 +190,7 @@
         </div>
         <div class="field-body">
           <div class="control">
-            <input class="input" type="number" id="height" [(ngModel)]="config.height">
+            <input class="input" type="number" id="height" [(ngModel)]="config.height" aria-label="height">
           </div>
         </div>
       </div>
@@ -200,7 +201,7 @@
         </div>
         <div class="field-body">
           <div class="control">
-            <input class="input" type="number" id="margin" [(ngModel)]="config.margin">
+            <input class="input" type="number" id="margin" [(ngModel)]="config.margin" aria-label="margin">
           </div>
         </div>
       </div>
@@ -211,7 +212,7 @@
         </div>
         <div class="field-body">
           <div class="control">
-            <input class="input" type="number" [(ngModel)]="config.fontSize">
+            <input class="input" type="number" [(ngModel)]="config.fontSize" aria-label="fontSize">
           </div>
         </div>
       </div>
@@ -222,7 +223,7 @@
         </div>
         <div class="field-body">
           <div class="control">
-            <input class="input" type="text" [(ngModel)]="config.labels.checked">
+            <input class="input" type="text" [(ngModel)]="config.labels.checked" aria-label="label checked">
           </div>
         </div>
       </div>
@@ -233,7 +234,7 @@
         </div>
         <div class="field-body">
           <div class="control">
-            <input class="input" type="text" [(ngModel)]="config.labels.unchecked">
+            <input class="input" type="text" [(ngModel)]="config.labels.unchecked" aria-label="label unchecked">
           </div>
         </div>
       </div>
@@ -244,7 +245,7 @@
         </div>
         <div class="field-body">
           <div class="control">
-            <input class="input" type="text" [(ngModel)]="config.values.checked">
+            <input class="input" type="text" [(ngModel)]="config.values.checked" aria-label="value checked">
           </div>
         </div>
       </div>
@@ -255,7 +256,7 @@
         </div>
         <div class="field-body">
           <div class="control">
-            <input class="input" type="text" [(ngModel)]="config.values.unchecked">
+            <input class="input" type="text" [(ngModel)]="config.values.unchecked" aria-label="value unchecked">
           </div>
         </div>
       </div>
@@ -267,7 +268,7 @@
         </div>
         <div class="field-body">
           <div class="control">
-            <input type="color" [(ngModel)]="config.color.checked">
+            <input type="color" [(ngModel)]="config.color.checked" aria-label="color checked">
           </div>
         </div>
       </div>
@@ -278,7 +279,7 @@
         </div>
         <div class="field-body">
           <div class="control">
-            <input type="color" [(ngModel)]="config.color.unchecked">
+            <input type="color" [(ngModel)]="config.color.unchecked" aria-label="color unchecked">
           </div>
         </div>
       </div>
@@ -289,7 +290,7 @@
         </div>
         <div class="field-body">
           <div class="control">
-            <input type="color" [(ngModel)]="config.switchColor.checked">
+            <input type="color" [(ngModel)]="config.switchColor.checked" aria-label="switchColor checked">
           </div>
         </div>
       </div>
@@ -300,7 +301,7 @@
         </div>
         <div class="field-body">
           <div class="control">
-            <input type="color" [(ngModel)]="config.switchColor.unchecked">
+            <input type="color" [(ngModel)]="config.switchColor.unchecked" aria-label="switchColor unchecked">
           </div>
         </div>
       </div>
@@ -311,7 +312,7 @@
         </div>
         <div class="field-body">
           <div class="control">
-            <input type="color" [(ngModel)]="config.fontColor.checked">
+            <input type="color" [(ngModel)]="config.fontColor.checked" aria-label="fontColor checked">
           </div>
         </div>
       </div>
@@ -322,7 +323,7 @@
         </div>
         <div class="field-body">
           <div class="control">
-            <input type="color" [(ngModel)]="config.fontColor.unchecked">
+            <input type="color" [(ngModel)]="config.fontColor.unchecked" aria-label="fontColor unchecked">
           </div>
         </div>
       </div>
