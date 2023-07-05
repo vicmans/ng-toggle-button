@@ -31,10 +31,18 @@
   <h2 class="subtitle">
     Disabled
   </h2>
+    <ng-toggle
+      [value]="false"
+      [disabled]="true"
+      [color]="{checked: '#00FF00', unchecked: 'red', disabled: '#ddd'}"
+      [labels]="{checked: 'si', unchecked: 'no'}"
+    ></ng-toggle>
   <ng-toggle
     [value]="false"
     [disabled]="true"
-    [color]="{checked: '#00FF00', unchecked: 'red', disabled: '#ddd'}"
+    [color]="{checked: '#00FF00', unchecked: 'red', disabled: '#eee'}"
+    [switchColor]="{disabled: '#ddd', checked: '#000', unchecked: '#000'}"
+    [fontColor]="{ checked: '#fff', unchecked :'#fff', disabled: '#aaa'}"
     [labels]="{checked: 'si', unchecked: 'no'}"
   ></ng-toggle>
 
@@ -286,6 +294,17 @@
 
       <div class="field is-horizontal">
         <div class="field-label">
+          <label class="label">disabled color: </label>
+        </div>
+        <div class="field-body">
+          <div class="control">
+            <input type="color" [(ngModel)]="config.color.disabled" aria-label="color disabled">
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label">
           <label class="label">checked switchColor: </label>
         </div>
         <div class="field-body">
@@ -308,6 +327,17 @@
 
       <div class="field is-horizontal">
         <div class="field-label">
+          <label class="label">disabled switchColor: </label>
+        </div>
+        <div class="field-body">
+          <div class="control">
+            <input type="color" [(ngModel)]="config.switchColor.disabled" aria-label="color disabled">
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label">
           <label class="label">checked fontColor: </label>
         </div>
         <div class="field-body">
@@ -324,6 +354,17 @@
         <div class="field-body">
           <div class="control">
             <input type="color" [(ngModel)]="config.fontColor.unchecked" aria-label="fontColor unchecked">
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <label class="label">disabled fontColor: </label>
+        </div>
+        <div class="field-body">
+          <div class="control">
+            <input type="color" [(ngModel)]="config.fontColor.disabled" aria-label="fontColor disabled">
           </div>
         </div>
       </div>

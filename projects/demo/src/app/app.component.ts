@@ -25,8 +25,13 @@ export class AppComponent {
     color: {
       unchecked: '#BFCBD9',
       checked: '#BFCBD9',
+      disabled: '#DBDBDB',
     },
-    switchColor: {checked: '#00a388', unchecked: 'red'},
+    switchColor: {
+      checked: '#00a388',
+      unchecked: 'red',
+      disabled: '#c0c0c0'
+    },
     labels: {
       unchecked: 'off',
       checked: 'on',
@@ -35,7 +40,11 @@ export class AppComponent {
       unchecked: 0,
       checked: 1,
     },
-    fontColor: {checked: '#fafafa', unchecked: '#f45a32'}
+    fontColor: {
+      checked: '#fafafa',
+      unchecked: '#f45a32',
+      disabled: '#ffffff'
+    }
   }
   myForm: FormGroup;
   constructor() {
