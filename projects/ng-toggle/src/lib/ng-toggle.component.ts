@@ -44,7 +44,7 @@ export class NgToggleComponent implements OnInit, ControlValueAccessor, OnChange
   @Input('aria-labelledby') ariaLabelledby: string | null = null;
   @Input('aria-describedby') ariaDescribedby: string;
   cssColors: boolean = false
-  
+
   @Output() change = new EventEmitter()
   @Output() valueChange = new EventEmitter()
   toggled: boolean
@@ -69,7 +69,6 @@ export class NgToggleComponent implements OnInit, ControlValueAccessor, OnChange
 
   onInput(value: boolean) {
     this.value = value;
-    console.log(this.value, value, 'calue')
     this.onTouch();
     this.onChange(this.value);
   }
@@ -130,7 +129,7 @@ export class NgToggleComponent implements OnInit, ControlValueAccessor, OnChange
     let background = this.switchColor
       ? this.switchColorCurrent
       : null
-    background = this.disabled ? DISABLED_BUTTON_COLOR : background
+    background = this.disabled ? this.switchColorDisabled : background
     return {
       width: px(this.buttonRadius),
       height: px(this.buttonRadius),
@@ -177,6 +176,10 @@ export class NgToggleComponent implements OnInit, ControlValueAccessor, OnChange
   get switchColorUnchecked () {
     return get(this.switchColor, 'unchecked', DEFAULT_SWITCH_COLOR)
   }
+  get switchColorDisabled(){
+    return get(this.switchColor, 'disabled', DISABLED_BUTTON_COLOR)
+  }
+
   get switchColorCurrent () {
     if (!isObject(this.switchColor)) {
       return this.switchColor || DEFAULT_SWITCH_COLOR
@@ -192,9 +195,16 @@ export class NgToggleComponent implements OnInit, ControlValueAccessor, OnChange
   get fontColorUnchecked () {
     return get(this.fontColor, 'unchecked', DEFAULT_SWITCH_COLOR)
   }
+
+  get fontColorDisabled(){
+    return get(this.fontColor, 'disabled', DEFAULT_SWITCH_COLOR)
+  }
   get fontColorCurrent () {
     if (!isObject(this.fontColor)) {
       return this.fontColor || DEFAULT_SWITCH_COLOR
+    }
+    if(this.disabled){
+      return this.fontColorDisabled
     }
     return this.toggled
       ? this.fontColorChecked
@@ -227,7 +237,7 @@ export class NgToggleComponent implements OnInit, ControlValueAccessor, OnChange
       this.focused = true;
     }
   }
-  
+
   onFocusout(event: FocusEvent) {
     if (!this._elementRef.nativeElement.contains(event.relatedTarget as Element)) {
       this.focused = false;
