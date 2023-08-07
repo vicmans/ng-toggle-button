@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.5.2] - 2023-08-06
+### Added
+- Add config for disabled styles (#52)
+
 ## [1.5.1] - 2023-04-28
 ### Change
 - Add accessibility attributes to fix accessibility issue (#49)
