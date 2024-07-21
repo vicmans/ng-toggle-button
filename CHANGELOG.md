@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.5.3] - 2024-07-20
+### Added
+- Add `textAlign` input property ([#53](https://github.com/vicmans/ng-toggle-button/issues/53))
+
 ## [1.5.2] - 2023-08-06
 ### Added
 - Add config for disabled styles (#52)

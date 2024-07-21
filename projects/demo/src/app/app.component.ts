@@ -44,6 +44,10 @@ export class AppComponent {
       checked: '#fafafa',
       unchecked: '#f45a32',
       disabled: '#ffffff'
+    },
+    textAlign: {
+      checked: 'left',
+      unchecked: 'right',
     }
   }
   myForm: FormGroup;

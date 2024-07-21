@@ -86,7 +86,18 @@ Use
 | name | `string` | `undefined` | Name to attach to the generated input field |
 | fontSize | `number` | `10` | Font size in pixels |
 | fontColor | `string  Object` | `undefined` | If `string` - color when checked <br>If `Object` - colors for labels when checked/uncheked <br>Example: `{checked: '#25EF02', unchecked: '#35DB15'}` by default the text color is white.|
+| textAlign | `string \| toggleConfig` | `{checked: 'left', unchecked: 'right'}` | If `string`: text-align is applied both `checked` and `unchecked` labels<br>If `toggleConfig`: Text align of checked/unchecked labels<br>Example: `{checked: 'center', unchecked: 'center'}`|
 | values | `{checked: any, unchecked: any}` | `{checked: true, unchecked: false}` | Values for checked and unchecked states, by default checked value is `true` and unchecked value is `false` <br>Example: `{checked: 1, unchecked: 0}`.|
+
+`toggleConfig` type is described below:
+
+```ts
+toggleConfig = {
+  checked: string;
+  unchecked: string;
+  disabled?: string;
+};
+```
 
 ### Outputs events
 

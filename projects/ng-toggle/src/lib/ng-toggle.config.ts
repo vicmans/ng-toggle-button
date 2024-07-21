@@ -16,4 +16,5 @@ export class NgToggleConfig {
   labels?: boolean | toggleConfig;
   values?: valueConfig;
   fontColor?: string | toggleConfig;
+  textAlign?: string | toggleConfig;
 }

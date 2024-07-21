@@ -25,11 +25,13 @@ label {
     font-weight: 600;
     color: white;
     z-index: 1;
+    padding: 0 10px;
+    box-sizing: border-box;
     &.ng-toggle-left {
-      left: 10px;
+      left: 0;
     }
     &.ng-toggle-right {
-      right: 10px;
+      right: 0;
     }
   }
   .ng-toggle-switch-core {
