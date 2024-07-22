@@ -24,7 +24,7 @@
     [(ngModel)]="prueba"
     [labels]="{checked: 'Encendido', unchecked: 'Apagado'}"
     [color]="{checked: '#007a66', unchecked: '#ddd', disabled: '#bfbfbf'}"
-    [width]="82"
+    [width]="90"
   ></ng-toggle>
   <p class="is-family-code">ngModel: {{prueba}}</p>
   
@@ -124,6 +124,7 @@
         [fontColor]="config.fontColor"
         [fontSize]="config.fontSize"
         [values]="config.values"
+        [textAlign]="config.textAlign"
         (change)="changeEvent()"
       ></ng-toggle>
       <br>
@@ -139,6 +140,7 @@
   [color]="{{config.color|json}}"
   [switchColor]="{{config.switchColor|json}}"
   [values]="{{config.values|json}}"
+  [textAlign]="{{config.textAlign|json}}"
   [fontColor]="{{config.fontColor|json}}">
 &lt;/ng-toggle>
       </pre>
@@ -269,6 +271,35 @@
         </div>
       </div>
 
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <label class="label">checked alignment: </label>
+        </div>
+        <div class="field-body">
+          <div class="select">
+            <select [(ngModel)]="config.textAlign.checked">
+              <option>left</option>
+              <option>center</option>
+              <option>right</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <label class="label">unchecked alignment: </label>
+        </div>
+        <div class="field-body">
+          <div class="select">
+            <select [(ngModel)]="config.textAlign.unchecked">
+              <option>left</option>
+              <option>center</option>
+              <option>right</option>
+            </select>
+          </div>
+        </div>
+      </div>
 
       <div class="field is-horizontal">
         <div class="field-label">

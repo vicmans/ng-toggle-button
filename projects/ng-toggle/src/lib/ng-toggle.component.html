@@ -28,14 +28,14 @@
   <ng-container *ngIf="labels">
     <span
       class="ng-toggle-switch-label ng-toggle-left"
-      [ngStyle]="labelStyle"
+      [ngStyle]="labelLeftStyle"
       *ngIf="toggled"
     >
       {{labelChecked}}
     </span>
     <span
       class="ng-toggle-switch-label ng-toggle-right"
-      [ngStyle]="labelStyle"
+      [ngStyle]="labelRightStyle"
       *ngIf="!toggled"
     >
       {{labelUnchecked}}

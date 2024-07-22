@@ -39,6 +39,10 @@ export class NgToggleComponent implements OnInit, ControlValueAccessor, OnChange
   @Input() labels: boolean | toggleConfig = this.config.labels || true
   @Input() fontColor: string | toggleConfig = this.config.fontColor || undefined
   @Input() values: valueConfig = this.config.values || {checked: true, unchecked: false}
+  @Input() textAlign: string | toggleConfig = this.config.textAlign || {
+    checked: 'left',
+    unchecked: 'right',
+  }
   @Input() id: string = ''
   @Input('aria-label') ariaLabel: string | null = null;
   @Input('aria-labelledby') ariaLabelledby: string | null = null;
@@ -142,7 +146,20 @@ export class NgToggleComponent implements OnInit, ControlValueAccessor, OnChange
     return {
       lineHeight: px(this.height),
       fontSize: this.fontSize ? px(this.fontSize) : null,
-      color: this.fontColor ? this.fontColorCurrent : null
+      color: this.fontColor ? this.fontColorCurrent : null,
+      width: px(this.width - this.buttonRadius - this.margin),
+    }
+  }
+  get labelLeftStyle () {
+    return {
+      ...this.labelStyle,
+      textAlign: (this.textAlign as toggleConfig).checked || this.textAlign
+    }
+  }
+  get labelRightStyle () {
+    return {
+      ...this.labelStyle,
+      textAlign: (this.textAlign as toggleConfig).unchecked || this.textAlign
     }
   }
 
