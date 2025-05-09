@@ -1,7 +1,9 @@
 import { toggleConfig, valueConfig } from "./ng-toggle.component";
 import { Injectable } from "@angular/core";
 
-@Injectable()
+@Injectable({
+  providedIn:'root'
+})
 export class NgToggleConfig {
   value?: any;
   name?: string;

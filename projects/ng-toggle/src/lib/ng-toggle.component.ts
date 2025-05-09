@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, forwardRef, Output, EventEmitter, OnChanges, SimpleChanges, ElementRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { NgToggleConfig } from './ng-toggle.config';
+import { CommonModule } from '@angular/common';
 
 const DEFAULT_COLOR_CHECKED = '#0099CC'
 const DEFAULT_COLOR_UNCHECKED = '#e0e0e0'
@@ -13,6 +14,8 @@ let nextUniqueId = 0;
 
 @Component({
   selector: 'ng-toggle',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './ng-toggle.component.html',
   styleUrls: ['./ng-toggle.component.scss'],
   providers: [

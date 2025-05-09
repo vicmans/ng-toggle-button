@@ -14,6 +14,7 @@ This is a toggle switch button component, you can see the demo [here][demo-url] 
 
 | Angular  | ng-toggle-button|
 | -------- |:------:| 
+| >=16.0.0 | v1.6.x |
 | >=15.0.0 | v1.5.x |
 | >=14.0.0 | v1.4.x |
 | >=13.0.0 | v1.3.x |
@@ -37,7 +38,22 @@ yarn add ng-toggle-button
 
 ## Usage
 
-Import the module
+### Standalone: Import the component.
+
+```typescript
+import { NgToggleComponent } from 'ng-toggle-button';
+@Component({
+  selector: 'your-component',
+  standalone: true,
+  imports: [
+    ...,
+    NgToggleComponent,
+  ],
+  ...
+})
+```
+
+### NgModule: Import the module
 
 ```typescript
 import { NgToggleModule } from 'ng-toggle-button';
@@ -45,7 +61,7 @@ import { NgToggleModule } from 'ng-toggle-button';
   ...
   imports: [
     ...,
-    NgToggleModule.forRoot() //or NgToggleModule
+    NgToggleModule
   ],
 })
 ```
@@ -63,9 +79,19 @@ import { NgToggleModule } from 'ng-toggle-button';
 })
 ```
 
-The `config` object is described in the table bellow
+You can edit the configuration globally by injecting `NgToggleConfig` service usually in the root component.
 
-Use
+```ts
+constructor(private config: NgToggleConfig) {
+  this.config.labels: {
+    unchecked: 'off',
+    checked: 'on',
+  };
+  this.config.color = 'crimson';
+}
+```
+
+Usage in template
 
 ```html
 <ng-toggle
@@ -76,6 +102,8 @@ Use
   }"
 ></ng-toggle>
 ```
+
+The `config` object is described in the table bellow
 
 ### Properties
 
