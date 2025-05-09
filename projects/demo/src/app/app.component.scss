@@ -10,3 +10,13 @@ h2 {
     display: flex;
     background-color: #f1f1f1;
 }
+.absolute {
+    position: absolute;
+}
+.relative {
+    position: relative;
+}
+.top-right {
+    top: 0.5rem;
+    right: 0.5rem;
+}

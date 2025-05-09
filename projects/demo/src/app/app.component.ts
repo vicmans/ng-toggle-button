@@ -1,17 +1,21 @@
-import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
-import { NgToggleConfig } from 'projects/ng-toggle/src/public-api';
+import { Component, inject } from '@angular/core';
+import { FormGroup, FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgToggleComponent, NgToggleConfig } from 'projects/ng-toggle/src/public-api';
+import { CommonModule, JsonPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    standalone: true,
+    imports: [CommonModule, NgToggleComponent, FormsModule, ReactiveFormsModule, JsonPipe],
 })
 export class AppComponent {
   title = 'ng-toggle-button';
   prueba = true
   custom = 'si'
   twoWay = 1
+  result = 'component'
 
   config: NgToggleConfig = {
     value: 1,
@@ -51,7 +55,10 @@ export class AppComponent {
     }
   }
   myForm: FormGroup;
+  configValue = inject(NgToggleConfig);
   constructor() {
+    this.configValue.color = '#6610f2'
+    this.configValue.width = 55
     this.myForm = new FormGroup({
       'show': new FormControl(false)
     })

@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.6.0] - 2025-05-08
+### Change
+- Update to Angular 14
+- Introduce standole component
+
 ## [1.5.3] - 2024-07-20
 ### Added
 - Add `textAlign` input property ([#53](https://github.com/vicmans/ng-toggle-button/issues/53))

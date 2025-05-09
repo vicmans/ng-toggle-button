@@ -19,9 +19,11 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/ng-toggle/src/test.ts",
             "tsConfig": "projects/ng-toggle/tsconfig.spec.json",
-            "karmaConfig": "projects/ng-toggle/karma.conf.js"
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
           }
         }
       }
@@ -39,7 +41,9 @@
             "outputPath": "dist/demo",
             "index": "projects/demo/src/index.html",
             "main": "projects/demo/src/main.ts",
-            "polyfills": "projects/demo/src/polyfills.ts",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/demo/tsconfig.app.json",
             "aot": false,
             "assets": [
@@ -105,9 +109,11 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "projects/demo/src/test.ts",
-            "polyfills": "projects/demo/src/polyfills.ts",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
             "tsConfig": "projects/demo/tsconfig.spec.json",
-            "karmaConfig": "projects/demo/karma.conf.js",
             "assets": [
               "projects/demo/src/favicon.ico",
               "projects/demo/src/assets"
@@ -116,18 +122,6 @@
               "projects/demo/src/styles.css"
             ],
             "scripts": []
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "projects/demo/e2e/protractor.conf.js",
-            "devServerTarget": "demo:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "demo:serve:production"
-            }
           }
         }
       }

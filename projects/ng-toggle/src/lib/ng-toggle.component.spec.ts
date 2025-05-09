@@ -11,7 +11,7 @@ describe('NgToggleComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [NgToggleComponent],
+      imports: [NgToggleComponent],
       providers: [NgToggleConfig]
     })
     .compileComponents();

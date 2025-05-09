@@ -1,12 +1,20 @@
 
 # AngularToggleButton
 
-This is a toggle switch button component, you can see the demo [here](https://ng-toggle-button.netlify.app) and test it in [StackBlitz](https://stackblitz.com/edit/ng-toggle-button).
+[![npm version](https://img.shields.io/npm/v/ng-toggle-button.svg)][npm-url]
+[![npm dlm](https://img.shields.io/npm/dm/ng-toggle-button)][npm-url]
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a28b65dc-53df-41d9-a660-d2741f833233/deploy-status)][demo-url]
+
+[npm-url]: https://www.npmjs.com/package/ng-toggle-button
+[demo-url]: https://ng-toggle-button.netlify.app
+
+This is a toggle switch button component, you can see the demo [here][demo-url] and test it in [StackBlitz](https://stackblitz.com/edit/ng-toggle-button).
 
 ## Versions
 
 | Angular  | ng-toggle-button|
 | -------- |:------:| 
+| >=16.0.0 | v1.6.x |
 | >=15.0.0 | v1.5.x |
 | >=14.0.0 | v1.4.x |
 | >=13.0.0 | v1.3.x |
@@ -30,7 +38,22 @@ yarn add ng-toggle-button
 
 ## Usage
 
-Import the module
+### Standalone: Import the component.
+
+```typescript
+import { NgToggleComponent } from 'ng-toggle-button';
+@Component({
+  selector: 'your-component',
+  standalone: true,
+  imports: [
+    ...,
+    NgToggleComponent,
+  ],
+  ...
+})
+```
+
+### NgModule: Import the module
 
 ```typescript
 import { NgToggleModule } from 'ng-toggle-button';
@@ -56,9 +79,22 @@ import { NgToggleModule } from 'ng-toggle-button';
 })
 ```
 
-The `config` object is described in the table bellow
+You can edit the configuration globally by injecting `NgToggleConfig` service usually in the root component.
 
-Use
+```ts
+constructor(private config: NgToggleConfig) {
+  this.config.labels: {
+    unchecked: 'off',
+    checked: 'on',
+  };
+  this.config.color = 'crimson';
+}
+```
+
+> [!NOTE]
+> `NgToggleConfig` is not provided in root, so don't forget to add it to providers if you are not using the module.
+
+Usage in template
 
 ```html
 <ng-toggle
@@ -70,6 +106,8 @@ Use
 ></ng-toggle>
 ```
 
+The `config` object is described in the table bellow
+
 ### Properties
 
 | Name | Type | Default | Description |
@@ -77,15 +115,15 @@ Use
 | value | `boolean` | `false` | Initial state of the toggle button |
 | speed | `number` | `300` | Transition time for the animation |
 | disabled | `boolean` | `false` | Button does not react on mouse events |
-| color | `string` | `#0099CC` | If `String` - color of the button when checked <br>If `Object` - colors for the button when checked/unchecked or disabled<br>Example: `{checked: '#00FF00', unchecked: '#FF0000', disabled: '#CCCCCC'}` |
-| labels | `boolean  Object` | `false` | If `boolean` - shows/hides default labels <br>If `Object` - sets custom labels for both states. <br>Example: `{checked: 'Foo', unchecked: 'Bar'}` |
-| switchColor | `string  Object` | `#fff` | If `string` - color or background property of the switch when checked <br>If `Object` - colors or background property for the switch when checked/uncheked <br>Example: `{checked: '#25EF02', unchecked: 'silver'}` |
+| color | `string` | `#0099CC` | If `String` - color of the button when checked <br>If `toggleConfig` - colors for the button when checked/unchecked or disabled<br>Example: `{checked: '#00FF00', unchecked: '#FF0000', disabled: '#CCCCCC'}` |
+| labels | `boolean | Object` | `false` | If `boolean` - shows/hides default labels <br>If `Object` - sets custom labels for both states. <br>Example: `{checked: 'Foo', unchecked: 'Bar'}` |
+| switchColor | `string | toggleConfig` | `#fff` | If `string` - color or background property of the switch when checked <br>If `toggleConfig` - colors or background property for the switch when checked/uncheked or disabled <br>Example: `{checked: '#25EF02', unchecked: 'silver', disabled: '#fff'}` |
 | width | `number` | `50` | Width of the button |
 | height | `number` | `22` | Height of the button |
 | margin | `number` | `3` | Space between the switch and background border |
 | name | `string` | `undefined` | Name to attach to the generated input field |
 | fontSize | `number` | `10` | Font size in pixels |
-| fontColor | `string  Object` | `undefined` | If `string` - color when checked <br>If `Object` - colors for labels when checked/uncheked <br>Example: `{checked: '#25EF02', unchecked: '#35DB15'}` by default the text color is white.|
+| fontColor | `string | toggleConfig` | `undefined` | If `string` - color when checked <br>If `toggleConfig` - colors for labels when checked/uncheked <br>Example: `{checked: '#25EF02', unchecked: '#35DB15'}` by default the text color is white.|
 | textAlign | `string \| toggleConfig` | `{checked: 'left', unchecked: 'right'}` | If `string`: text-align is applied both `checked` and `unchecked` labels<br>If `toggleConfig`: Text align of checked/unchecked labels<br>Example: `{checked: 'center', unchecked: 'center'}`|
 | values | `{checked: any, unchecked: any}` | `{checked: true, unchecked: false}` | Values for checked and unchecked states, by default checked value is `true` and unchecked value is `false` <br>Example: `{checked: 1, unchecked: 0}`.|
 

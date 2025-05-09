@@ -1,114 +1,119 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="http://vicmans.com">
+    <a class="navbar-item" href="https://vicmans.com">
       <img src="assets/v.png" width="28" height="28" alt="logo"> Victor
     </a>
   </div>
   <a class="button is-light" href="https://github.com/vicmans/ng-toggle-button">
     <strong>GitHub</strong>
   </a>
-
 </nav>
 
 <div class="container" style="text-align:center">
   <section class="section">
   <h1 class="title">{{title}}</h1>
   <h2 class="subtitle">Examples:</h2>
-  <h3>Default</h3>
-  <ng-toggle></ng-toggle>
-  
-  <h2 class="subtitle">
-    Custom
-  </h2>
-  <ng-toggle
-    [(ngModel)]="prueba"
-    [labels]="{checked: 'Encendido', unchecked: 'Apagado'}"
-    [color]="{checked: '#007a66', unchecked: '#ddd', disabled: '#bfbfbf'}"
-    [width]="90"
-  ></ng-toggle>
-  <p class="is-family-code">ngModel: {{prueba}}</p>
-  
-  <h2 class="subtitle">
-    Disabled
-  </h2>
-    <ng-toggle
-      [value]="false"
-      [disabled]="true"
-      [color]="{checked: '#00FF00', unchecked: 'red', disabled: '#ddd'}"
-      [labels]="{checked: 'si', unchecked: 'no'}"
-    ></ng-toggle>
-  <ng-toggle
-    [value]="false"
-    [disabled]="true"
-    [color]="{checked: '#00FF00', unchecked: 'red', disabled: '#eee'}"
-    [switchColor]="{disabled: '#ddd', checked: '#000', unchecked: '#000'}"
-    [fontColor]="{ checked: '#fff', unchecked :'#fff', disabled: '#aaa'}"
-    [labels]="{checked: 'si', unchecked: 'no'}"
-  ></ng-toggle>
+  <div class="columns">
+    <div class="column is-half">
+      <h3>Default</h3>
+      <ng-toggle></ng-toggle>
+      
+      <h2 class="subtitle">
+        Custom
+      </h2>
+      <ng-toggle
+        [(ngModel)]="prueba"
+        [labels]="{checked: 'Encendido', unchecked: 'Apagado'}"
+        [color]="{checked: '#007a66', unchecked: '#ddd', disabled: '#bfbfbf'}"
+        [width]="90"
+      ></ng-toggle>
+      <p class="is-family-code">ngModel: {{prueba}}</p>
+      
+      <h2 class="subtitle">
+        Disabled
+      </h2>
+        <ng-toggle
+          [value]="false"
+          [disabled]="true"
+          [color]="{checked: '#00FF00', unchecked: 'red', disabled: '#ddd'}"
+          [labels]="{checked: 'si', unchecked: 'no'}"
+        ></ng-toggle>
+      <ng-toggle
+        [value]="false"
+        [disabled]="true"
+        [color]="{checked: '#00FF00', unchecked: 'red', disabled: '#eee'}"
+        [switchColor]="{disabled: '#ddd', checked: '#000', unchecked: '#000'}"
+        [fontColor]="{ checked: '#fff', unchecked :'#fff', disabled: '#aaa'}"
+        [labels]="{checked: 'si', unchecked: 'no'}"
+      ></ng-toggle>
 
-  <h2 class="subtitle">
-    In a formGroup
-  </h2>
+      <h2 class="subtitle">
+        In a formGroup
+      </h2>
 
-  <form [formGroup]="myForm">
-    <ng-toggle
-      formControlName="show"
-      color="#aa331f"
-      width="55"
-      speed="100"
-      [labels]="{checked: 'yes', unchecked: 'no'}"
-    ></ng-toggle>
-    Active
-    <br>
-    Touched: {{showControl.touched}} <br>
-    Touched: {{showControl.untouched}} <br>
-    Dirty: {{showControl.dirty}} <br>
-    valid: {{showControl.valid}} <br>
-    invalid: {{showControl.invalid}} <br>
-    pristine: {{showControl.pristine}} <br>
-  </form>
+      <form [formGroup]="myForm">
+        <ng-toggle
+          formControlName="show"
+          color="#aa331f"
+          width="55"
+          speed="100"
+          [labels]="{checked: 'yes', unchecked: 'no'}"
+        ></ng-toggle>
+        Active
+        <br>
+        Touched: {{showControl.touched}} <br>
+        Touched: {{showControl.untouched}} <br>
+        Dirty: {{showControl.dirty}} <br>
+        valid: {{showControl.valid}} <br>
+        invalid: {{showControl.invalid}} <br>
+        pristine: {{showControl.pristine}} <br>
+      </form>
+    </div>
+    <div class="column is-half">
+      <h2 class="subtitle">Large</h2>
+      <ng-toggle
+        color="#aa331f"
+        width="100"
+        height="50"
+        fontSize="20"
+        speed="1500"
+        [margin]="2"
+        [labels]="{checked: 'ok', unchecked: 'no'}"
+      ></ng-toggle>
 
-  <h2 class="subtitle">Large</h2>
-  <ng-toggle
-    color="#aa331f"
-    width="100"
-    height="50"
-    fontSize="20"
-    speed="1500"
-    [margin]="2"
-    [labels]="{checked: 'ok', unchecked: 'no'}"
-  ></ng-toggle>
-
+      <h2 class="subtitle">
+        Another style
+      </h2>
+      <ng-toggle
+        [value]="false"
+        width="40"
+        height="10"
+        [margin]="-3"
+        [switchColor]="{checked: '#00a388', unchecked: '#BFCBD9'}"
+      ></ng-toggle>
+      <br>
+      <h2 class="subtitle">
+        Custom values
+      </h2>
+      <ng-toggle
+        [(ngModel)]="custom"
+        [labels]="{checked: 'yes', unchecked: 'no'}"
+        [values]="{checked: 'si', unchecked: 'no'}"
+        [width]="55"
+      ></ng-toggle>
+      <p class="is-family-code">ngModel: {{custom}}</p>
+      <h2 class="subtitle">
+        Two-way binding value
+      </h2>
+      <ng-toggle
+        [(value)]="twoWay"
+      ></ng-toggle>
+      <p class="is-family-code">value: {{twoWay}}</p>
+      </div>
+  </div>
   <h2 class="subtitle">
-    Another style
-  </h2>
-  <ng-toggle
-    [value]="false"
-    width="40"
-    height="10"
-    [margin]="-3"
-    [switchColor]="{checked: '#00a388', unchecked: '#BFCBD9'}"
-  ></ng-toggle>
-  <br>
-  <h2 class="subtitle">
-    Custom values
-  </h2>
-  <ng-toggle
-    [(ngModel)]="custom"
-    [labels]="{checked: 'yes', unchecked: 'no'}"
-    [values]="{checked: 'si', unchecked: 'no'}"
-    [width]="55"
-  ></ng-toggle>
-  <p class="is-family-code">ngModel: {{custom}}</p>
-  <h2 class="subtitle">
-    Two-way binding value
-  </h2>
-  <ng-toggle
-    [(value)]="twoWay"
-  ></ng-toggle>
-  <p class="is-family-code">value: {{twoWay}}</p>
-  <h2 class="subtitle">
-    Configure
+    Configure <br>
+    <small>Build your own</small>
   </h2>
   <div class="columns"> 
     <div class="column is-half">
@@ -128,7 +133,15 @@
         (change)="changeEvent()"
       ></ng-toggle>
       <br>
-      <pre style="text-align: left; margin-top: 15px;">
+      <div class="relative">
+        <ng-toggle class="absolute top-right"
+          [width]="100"
+          [(ngModel)]="result"
+          [values]="{checked: 'component', unchecked: 'config'}"
+          [color]="{checked: '#007a66', unchecked: '#007a66', disabled: '#eee'}"
+          [labels]="{checked: 'Component', unchecked: 'Config'}"
+        ></ng-toggle>
+        <pre style="text-align: left; margin-top: 15px;" *ngIf="result=='component'">
 &lt;ng-toggle
   [value]="{{config.value}}"
   [disabled]="{{config.disabled}}"
@@ -143,7 +156,10 @@
   [textAlign]="{{config.textAlign|json}}"
   [fontColor]="{{config.fontColor|json}}">
 &lt;/ng-toggle>
-      </pre>
+        </pre>
+        <pre style="text-align: left; margin-top: 15px;" *ngIf="result=='config'">{{config | json}}</pre>
+      </div>
+
     </div>
     <div class="column is-half">
       <div class="field is-horizontal">
