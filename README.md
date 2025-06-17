@@ -14,6 +14,7 @@ This is a toggle switch button component, you can see the demo [here][demo-url] 
 
 | Angular  | ng-toggle-button|
 | -------- |:------:| 
+| >=17.0.0 | v1.7.x |
 | >=16.0.0 | v1.6.x |
 | >=15.0.0 | v1.5.x |
 | >=14.0.0 | v1.4.x |

@@ -1,10 +1,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.7.0] - 2025-06-16
+### Change
+- Update to Angular 17
+
 ## [1.6.0] - 2025-05-08
 ### Change
-- Update to Angular 14
-- Introduce standole component
+- Update to Angular 16
+- Add standalone component
 
 ## [1.5.3] - 2024-07-20
 ### Added

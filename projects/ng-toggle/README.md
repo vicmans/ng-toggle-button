@@ -14,6 +14,7 @@ This is a toggle switch button component, you can see the demo [here][demo-url] 
 
 | Angular  | ng-toggle-button|
 | -------- |:------:| 
+| >=17.0.0 | v1.7.x |
 | >=16.0.0 | v1.6.x |
 | >=15.0.0 | v1.5.x |
 | >=14.0.0 | v1.4.x |
@@ -61,7 +62,7 @@ import { NgToggleModule } from 'ng-toggle-button';
   ...
   imports: [
     ...,
-    NgToggleModule.forRoot() //or NgToggleModule
+    NgToggleModule
   ],
 })
 ```
@@ -90,9 +91,6 @@ constructor(private config: NgToggleConfig) {
   this.config.color = 'crimson';
 }
 ```
-
-> [!NOTE]
-> `NgToggleConfig` is not provided in root, so don't forget to add it to providers if you are not using the module.
 
 Usage in template
 
