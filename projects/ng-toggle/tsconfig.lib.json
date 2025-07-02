@@ -3,16 +3,9 @@
   "compilerOptions": {
     "outDir": "../../out-tsc/lib",
     "declaration": true,
+    "declarationMap": true,
     "inlineSources": true,
-    "types": [],
-  },
-  "angularCompilerOptions": {
-    "compilationMode": "partial",
-    "skipTemplateCodegen": true,
-    "strictMetadataEmit": true,
-    "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true,
-    "enableResourceInlining": true
+    "types": []
   },
   "exclude": [
     "**/*.spec.ts"

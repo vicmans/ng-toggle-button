@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormGroup, FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgToggleComponent, NgToggleConfig } from 'projects/ng-toggle/src/public-api';
 import { CommonModule, JsonPipe } from '@angular/common';
+import { NgToggleComponent, NgToggleConfig } from '../../../ng-toggle/src/public-api';
 
 @Component({
     selector: 'app-root',
@@ -17,7 +17,7 @@ export class AppComponent {
   twoWay = 1
   result = 'component'
 
-  config: NgToggleConfig = {
+  config = {
     value: 1,
     name: '',
     disabled: false,
