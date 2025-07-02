@@ -35,12 +35,12 @@ export class NgToggleComponent implements OnInit, ControlValueAccessor, OnChange
   @Input() height: number = this.config.height || 25
   @Input() width: number = this.config.width || 45
   @Input() margin: number = this.config.margin || 2
-  @Input() fontSize: number = this.config.fontSize || undefined
+  @Input() fontSize?: number = this.config.fontSize || undefined
   @Input() speed: number = this.config.speed || 300
-  @Input() color: string | toggleConfig = this.config.color
-  @Input() switchColor: string | toggleConfig = this.config.switchColor
+  @Input() color?: string | toggleConfig = this.config.color
+  @Input() switchColor?: string | toggleConfig = this.config.switchColor
   @Input() labels: boolean | toggleConfig = this.config.labels || true
-  @Input() fontColor: string | toggleConfig = this.config.fontColor || undefined
+  @Input() fontColor?: string | toggleConfig = this.config.fontColor || undefined
   @Input() values: valueConfig = this.config.values || {checked: true, unchecked: false}
   @Input() textAlign: string | toggleConfig = this.config.textAlign || {
     checked: 'left',
@@ -49,13 +49,13 @@ export class NgToggleComponent implements OnInit, ControlValueAccessor, OnChange
   @Input() id: string = ''
   @Input('aria-label') ariaLabel: string | null = null;
   @Input('aria-labelledby') ariaLabelledby: string | null = null;
-  @Input('aria-describedby') ariaDescribedby: string;
+  @Input('aria-describedby') ariaDescribedby!: string;
   cssColors: boolean = false
 
   @Output() change = new EventEmitter()
   @Output() valueChange = new EventEmitter()
-  toggled: boolean
-  focused: boolean;
+  toggled!: boolean
+  focused!: boolean;
   private _uniqueId: string;
 
   constructor(
@@ -238,7 +238,7 @@ export class NgToggleComponent implements OnInit, ControlValueAccessor, OnChange
     return this.ariaLabel ? null : `${this._uniqueId}-label`;
   }
 
-  toggle(event) {
+  toggle(_event: any) {
     const toggled = !this.toggled;
     this.toggled = toggled;
 
@@ -266,23 +266,23 @@ export class NgToggleComponent implements OnInit, ControlValueAccessor, OnChange
   }
 }
 
-export const isObject = (value) => {
+export const isObject = (value: any) => {
   return typeof value === 'object'
 }
 
-export const has = (object, key) => {
+export const has = (object: Record<string, any>, key: any) => {
   return isObject(object) && object.hasOwnProperty(key)
 }
 
-export const get = (object, key, defaultValue) => {
+export const get = (object: any, key: string, defaultValue: string) => {
   return has(object, key) ? object[key] : defaultValue
 }
 
-export const px = value => {
+export const px = (value: number) => {
   return `${value}px`
 }
 
-export const translate = (x, y) => {
+export const translate = (x: string, y: string) => {
   return `translate(${x}, ${y})`
 }
 

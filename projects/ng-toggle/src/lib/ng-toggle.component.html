@@ -25,20 +25,21 @@
       [ngStyle]="buttonStyle">
     </div>
   </div>
-  <ng-container *ngIf="labels">
-    <span
-      class="ng-toggle-switch-label ng-toggle-left"
-      [ngStyle]="labelLeftStyle"
-      *ngIf="toggled"
-    >
-      {{labelChecked}}
-    </span>
-    <span
-      class="ng-toggle-switch-label ng-toggle-right"
-      [ngStyle]="labelRightStyle"
-      *ngIf="!toggled"
-    >
-      {{labelUnchecked}}
-    </span>
-  </ng-container>
+  @if (labels) {
+    @if (toggled) {
+      <span
+        class="ng-toggle-switch-label ng-toggle-left"
+        [ngStyle]="labelLeftStyle"
+      >
+        {{labelChecked}}
+      </span>
+    } @else {
+      <span
+        class="ng-toggle-switch-label ng-toggle-right"
+        [ngStyle]="labelRightStyle"
+      >
+        {{labelUnchecked}}
+      </span>
+    }
+  }
 </label>
