@@ -1,5 +1,261 @@
 /* You can add global styles to this file, and also import other style files */
+body,
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+code, pre {
+  -moz-osx-font-smoothing: auto;
+  -webkit-font-smoothing: auto;
+  font-family: monospace;
+}
+
+button {
+  cursor: pointer;
+}
+
+button[disabled],
+input[disabled] {
+  cursor: not-allowed;
+}
+
 .container {
   width: 100%;
   max-width: 1280px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f5f5f5;
+  padding: 0.5rem 1rem;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-item {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-item img {
+  max-height: 28px;
+}
+
+.button.is-light {
+  background-color: #ffffff;
+  border: 1px solid #dbdbdb;
+  color: #363636;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.button.is-light:hover {
+  background-color: #f5f5f5;
+}
+
+.container {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.section {
+  padding: 1.5rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.125;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  color: #4a4a4a;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.75rem;
+}
+
+.column {
+  flex: 1;
+  padding: 0.75rem;
+}
+
+.column.is-half {
+  width: 50%;
+}
+
+.field.is-horizontal {
+  display: flex;
+  align-items: center;
+}
+
+.field:not(:last-child) {
+  margin-bottom: .75rem;
+}
+
+.field-label .label {
+  font-size: inherit
+}
+
+.label {
+  color: #363636;
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+  .field-label {
+    margin-bottom: .5rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .field-label {
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 0;
+    margin-right: 1.5rem;
+    text-align: right
+  }
+
+  .field-label.is-small {
+    font-size: .75rem;
+    padding-top: .375em
+  }
+
+  .field-label.is-normal {
+    padding-top: .375em
+  }
+
+  .field-label.is-medium {
+    font-size: 1.25rem;
+    padding-top: .375em
+  }
+
+  .field-label.is-large {
+    font-size: 1.5rem;
+    padding-top: .375em
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .field-body {
+    display: flex;
+    flex-basis: 0;
+    flex-grow: 5;
+    flex-shrink: 1
+  }
+
+  .field-body .field {
+    margin-bottom: 0
+  }
+
+  .field-body>.field {
+    flex-shrink: 1
+  }
+
+  .field-body>.field:not(.is-narrow) {
+    flex-grow: 1
+  }
+
+  .field-body>.field:not(:last-child) {
+    margin-right: .75rem
+  }
+}
+
+.control {
+  box-sizing: border-box;
+  clear: both;
+  font-size: 1rem;
+  position: relative;
+  text-align: left;
+}
+
+.input {
+  width: 100%;
+  max-width: 300px;
+  padding: 0.5rem;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+}
+
+.input:focus {
+  border-color: #3273dc;
+  outline: none;
+}
+
+.select select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+}
+
+.footer {
+  padding: 1rem;
+  background-color: #f5f5f5;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #363636;
+}
+
+.footer.has-text-centered {
+  text-align: center;
+}
+
+pre {
+  -webkit-overflow-scrolling: touch;
+  background-color: #f5f5f5;
+  color: #4a4a4a;
+  overflow-x: auto;
+  padding: 1.25rem 1.5rem;
+  white-space: pre;
+  word-wrap: normal;
+  line-height: 21px;
+  font-size: 14px;
 }

@@ -1,7 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [1.8.0] - 2025-01-01
+## [1.9.0] - 2025-07-13
+### Change
+- Update to Angular 19
+- Change demo styles
+
+## [1.8.0] - 2025-07-01
 ### Change
 - Update to Angular 18
 - Remove `*ngIf` directives from lib component

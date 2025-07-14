@@ -141,7 +141,8 @@
           [color]="{checked: '#007a66', unchecked: '#007a66', disabled: '#eee'}"
           [labels]="{checked: 'Component', unchecked: 'Config'}"
         ></ng-toggle>
-        <pre style="text-align: left; margin-top: 15px;" *ngIf="result=='component'">
+        @if (result=='component') {
+        <pre style="text-align: left; margin-top: 15px;">
 &lt;ng-toggle
   [value]="{{config.value}}"
   [disabled]="{{config.disabled}}"
@@ -157,7 +158,9 @@
   [fontColor]="{{config.fontColor|json}}">
 &lt;/ng-toggle>
         </pre>
-        <pre style="text-align: left; margin-top: 15px;" *ngIf="result=='config'">{{config | json}}</pre>
+        } @else {
+        <pre style="text-align: left; margin-top: 15px;">{{config | json}}</pre>
+        }
       </div>
 
     </div>
